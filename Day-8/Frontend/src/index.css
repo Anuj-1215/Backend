@@ -21,12 +21,20 @@ html{
   gap: 1rem;
   padding-block: 1rem;
   padding-inline: 3rem;
+  flex-wrap: wrap;
 }
 
 .note{
   background-color: #494949;
   padding: 1rem;
   border-radius: 0.7rem;
-  max-width: 20rem;
+  max-width: 22rem;
   color: rgb(252, 246, 234);
+}
+
+.note-create-form{
+  display: flex;
+  gap: 1rem;
+  padding-block: 1rem;
+  padding-inline: 3rem;
 }
