@@ -32,9 +32,24 @@ html{
   color: rgb(252, 246, 234);
 }
 
+.note button{
+  margin-top: 1rem;
+}
+
 .note-create-form{
   display: flex;
   gap: 1rem;
   padding-block: 1rem;
   padding-inline: 3rem;
+}
+
+button{
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  margin: 0.2rem;
+  border: none;
+}
+
+input{
+  padding: 1rem;
 }

@@ -37,12 +37,29 @@ const App = () => {
 
   function handleDeleteNote(noteId){
     axios.delete("http://localhost:3000/api/notes/"+noteId)
-    
     .then(res => {
       console.log(res.data);
 
       fetchNotes()
       
+    })
+  }
+
+  function updateDescriptionNote(noteId){
+
+    let newDescription = prompt("Enter Updated Description")
+
+    if(newDescription === ''){
+      alert('Description can not be empty')
+      newDescription = prompt("Enter updated description")
+    }
+    axios.patch("http://localhost:3000/api/notes/"+noteId,
+      {
+        description: newDescription
+    })
+    .then(res => {
+      console.log(res.data);
+      fetchNotes()
     })
   }
 
@@ -62,6 +79,7 @@ const App = () => {
               <h1> {note.title} </h1>
               <p> {note.description} </p>
               <button onClick={()=>{handleDeleteNote(note._id)}}>Delete</button>
+              <button onClick={()=>{updateDescriptionNote(note._id)}}>Update Description</button>
             </div>
           })
         }
